@@ -4,13 +4,19 @@
     <meta charset="utf-8">
     <title>Sitemate interview</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="modal.js"></script>
   </head>
 
   <body>
     <div class="main">
         <h2>Author Tran Hung</h1>
         <h2>Country: Viet Nam</h2>
-      <button class="modal-button">Click Me</button>
+      <button onclick="openModal()" class="modal-button" >Click Me</button>
+      <script>
+        async function openModal() {
+          this.myModal = new Modal("Are you sure want to continue?", "Yes", "Cancel");
+        }
+      </script>
     </div>
   </body>
 </html>
