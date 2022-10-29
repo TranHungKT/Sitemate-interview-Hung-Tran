@@ -57,12 +57,12 @@ class Modal {
       this.confirmButton.focus();
 
       this.confirmButton.addEventListener('click', () => {
-        resolve('You just clicked Yes');
+        resolve(`You just clicked ${this.modalConfirmText}`);
         this.deleteModal();
       });
 
       this.cancelButton.addEventListener('click', () => {
-        resolve('You just clicked Cancel');
+        resolve(`You just clicked ${this.modelCancelText}`);
         this.deleteModal();
       });
     });
