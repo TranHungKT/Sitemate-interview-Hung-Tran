@@ -5,6 +5,7 @@
     <title>Sitemate interview</title>
     <link rel="stylesheet" href="styles.css">
     <script src="modal.js"></script>
+    <script src="responseText.js"></script>
   </head>
 
   <body>
@@ -15,6 +16,14 @@
       <script>
         async function openModal() {
           this.myModal = new Modal("Are you sure want to continue?", "Yes", "Cancel");
+          this.response = new ResponseText()
+          try {
+          const modalResponse = await myModal.handleClickButton();
+          this.response.createText(modalResponse)
+        } catch(err) {
+          console.log(err);
+        }
+          
         }
       </script>
     </div>

@@ -51,4 +51,25 @@ class Modal {
 
     this.parent.appendChild(this.modal);
   }
+
+  handleClickButton() {
+    return new Promise((resolve, reject) => {
+      this.confirmButton.focus();
+
+      this.confirmButton.addEventListener('click', () => {
+        resolve('You just clicked Yes');
+        this.deleteModal();
+      });
+
+      this.cancelButton.addEventListener('click', () => {
+        resolve('You just clicked Cancel');
+        this.deleteModal();
+      });
+    });
+  }
+
+  deleteModal() {
+    this.parent.removeChild(this.modal);
+    delete this;
+  }
 }
