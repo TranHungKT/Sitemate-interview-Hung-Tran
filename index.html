@@ -4,28 +4,16 @@
     <meta charset="utf-8">
     <title>Sitemate interview</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="modal.js"></script>
-    <script src="responseText.js"></script>
+    <script src="./src/modal.js"></script>
+    <script src="./src/responseText.js"></script>
+    <script src="./src/openModal.js"></script>
   </head>
 
   <body>
     <div class="main">
         <h2>Author Tran Hung</h1>
         <h2>Country: Viet Nam</h2>
-      <button onclick="openModal()" class="modal-button" >Click Me</button>
-      <script>
-        async function openModal() {
-          this.myModal = new Modal("Are you sure want to continue?", "Yes", "Cancel");
-          this.response = new ResponseText()
-          try {
-          const modalResponse = await myModal.handleClickButton();
-          this.response.createText(modalResponse)
-        } catch(err) {
-          console.log(err);
-        }
-          
-        }
-      </script>
+      <button onclick="openModal('Are you sure want to continue?', 'Yes', 'Cancel')" class="modal-button" >Click Me</button>
     </div>
   </body>
 </html>
